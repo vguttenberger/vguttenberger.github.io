@@ -17,42 +17,10 @@
   color: #fff;
 }
 
-::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
-  color: #777777;
-  font-weight: 300;
-}
-
-:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #777777;
-  opacity: 1;
-  font-weight: 300;
-}
-
-::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #777777;
-  opacity: 1;
-  font-weight: 300;
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #777777;
-  font-weight: 300;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #777777;
-  font-weight: 300;
-}
-
 body {
-  color: #777777;
+  color: #4f4e4e;
   font-family: 'Cutive Mono', monospace;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 1.625em;
   position: relative;
@@ -497,6 +465,10 @@ td, th {
 
 .pb-0 {
   padding-bottom: 0px;
+}
+
+.pb-5 {
+  padding-bottom: 5px;
 }
 
 .pb-10 {
@@ -1249,15 +1221,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
+  position:relative;
   background: url(../img/building.jpg) center;
   background-size: cover;
-}
-
-.banner-area .credit {
-  position:absolute;  
-  right:0px;
-  top:670px;
-  font-size:11px;
 }
 
 .banner-content {
@@ -1265,6 +1231,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding-top: 150px;
   text-align: center;
   position: relative;
+}
+
+.banner-area .credit {
+  position:absolute;  
+  right:0px;
+  bottom:-15px;
+  font-size:11px;
+  color:#222222;
 }
 
 .banner-content h1 {
@@ -1711,9 +1685,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 h6 {
-  color: #fff;
+  color: #222222;
   margin-bottom: 25px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
 }
 
