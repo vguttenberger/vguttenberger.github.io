@@ -1441,6 +1441,18 @@ h6 {
   height:325px;
 }
 
+.photo-hh {
+  width: 400px;
+  height: 400px;
+}
+
+.hh-pages {
+  width: 800px;
+  height: 425px;
+  margin-left: 180px;
+  margin-bottom:5px;
+}
+
 .whole-wrap {
   background-color: #fff;
 }
