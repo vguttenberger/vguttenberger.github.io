@@ -311,6 +311,10 @@ td, th {
   margin-left: 50px;
 }
 
+.ml-300 {
+  margin-left: 300px;
+}
+
 .mr-0 {
   margin-right: 0 !important;
 }
@@ -1446,11 +1450,35 @@ h6 {
   height: 400px;
 }
 
+.photo-105 {
+  width: 450px;
+  height:345px;
+}
+
 .hh-pages {
   width: 800px;
   height: 425px;
   margin-left: 180px;
   margin-bottom:5px;
+}
+
+.grading-pages {
+  width: 550px;
+  height: 325px;
+  margin-bottom:5px;
+}
+.grading-pages2 {
+  width: 718px;
+  height: 250px;
+  margin-bottom:10px;
+  margin-left: 200px;
+}
+
+.grading-pages3 {
+  width: 718px;
+  height: 345px;
+  margin-bottom:10px;
+  margin-left: 200px;
 }
 
 .whole-wrap {

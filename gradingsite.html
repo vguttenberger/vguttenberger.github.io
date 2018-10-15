@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Welcome to Vera's Website!</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Monoton|Poiret+One|Raleway+Dots|Cutive+Mono|Kosugi+Maru" rel="stylesheet">
+
+		<!--
+		CSS
+		============================================= -->
+		<link rel="stylesheet" href="css/bootstrap.css">				 
+		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+
+		 <header id="header">
+		    <div class="container">
+		   		<div class="row align-items-center justify-content-between d-flex">
+			    <div id="logo">
+			   		<a href="index.html#home"><p>Vera Guttenberger</p></a>
+			    </div>
+			    <nav id="nav-menu-container">
+			      <ul class="nav-menu">
+			        <li class="menu-active"><a href="index.html#home">Home</a></li>
+			        <li><a href="index.html#offer">About</a></li>
+			        <li><a href="index.html#project">My Work</a></li>
+			       </ul>
+			     </nav>		    		
+		   	</div>
+		   </div>
+		 </header>
+		<section class="pt-120" id="offer">
+			<div class="container">	
+				<div class="row pb-30">
+					<div class="col-lg-5">
+						<img class="photo-105" src="img/105.png">
+					</div>
+					<div class="col-lg-7 pl-40">
+						<h1 class="mb-70">Halligan Helper</h1>
+						<h4 class="mb-20"> Idea </h4>
+						<p>
+							 As a current Teaching Assistant for the Programming Languages course at Tufts University, every week I attend staff grading sessions of student homework. In order to grade we use a very simple site the professor wrote that has the basic features for grading, but is lacking in terms of visual appearance and usability. I. along with another TA, volunteered to work with the Graduate TA to help redesign and implement the front end for a cleaner, more efficient, and usable site. 
+						</p>
+					</div>
+				</div>	
+				<div class="row pb-30">
+					<div class="col-lg-12">
+						<h4 class="mb-20"> Basic Functionality and Initial Thoughts </h4>
+						<p> The basic functionality of the site includes joining the current grading "party", picking a problem to grade, and sequentially grading anonimized solutions. On any given grading page there is the problem, the current submission, a dropdown for the grade, and a box for comments. Initially there was no styling. Some intial changes I thought about were to center the problem choices on the main page, to make the grades radio buttons instead of the current dropdown, add a progress bar to view how many submissions of the particular problem have been graded, allow a user to switch the prpblem or submission, and think about colors (especially for buttons). My very initial design for the two pages was done in AdobeXD:  </p>
+						<img class="grading-pages" src="img/gradingsite/105homepage1.png">
+						<img class="grading-pages" src="img/gradingsite/105gradepage1.png">
+						<p> Some further considerations were to organize the information better: split up into sections of problem, submission, grade, and feedback, use icons for external links, and add components that kept track of TAs currently assigned, currently grading, and currently checking. </p>
+						<img class="grading-pages ml-300" src="img/gradingsite/105gradepage3.png">
+					</div>
+				</div>	
+				<div class="row pb-30">
+					<div class="col-lg-12">
+						<h4 class="mb-20"> Implementation </h4>
+						<p> When begining to implement some of the design changes, we decided to search for a CSS framework to aide our design. We settled on mini.css, as it is extremely lightweight and minimal, responsive, and style-agnostic. This framework greatly improved our layout. We made some layout changes for the home page: right aligned the buttons, so that on the left we could have more detailed descriptions. On the grading page, we vertically aligned the information about current graders, and also implemented a grading history component. At the request of the professor, we added descriptions for the grades one could give. Also, after getting some feedback from staff, we went back to word descriptions instead of icons for the external link, to present the information more clearly. Here are the initial implementations of the two pages: </p>
+						<img class="grading-pages2" src="img/gradingsite/105homepage2.png">
+						<p> Under the section for feedback, we will also include comments to staff (for TAs to view, but not students), buttons to save progress, escalate (which brings the submission to the attention of the professor if there are serious issues), preview (what it looks like when checking), and submit. We want to right align these buttons and think about what colors to make them. Also below that, we have a table of macros that TAs can use for a given problem (so that in the feedback, a TA can write just an abbreviation that when vieiwing will expand to longer feedback, if this feedback is common). </p>
+						<img class="grading-pages3" src="img/gradingsite/105gradepage4.png">
+						<p> We also implemented a "check" page, for TAs to check over all of the graded assignments:</p>
+						<img class="grading-pages3" src="img/gradingsite/105checkpage.png">
+				<div class="row pb-30">
+					<div class="col-lg-12">
+						<h4 class="mb-20"> Further Changes </h4>
+						<p> We obviously have a long way to go, but this is just the initial cleanup and rework of the platform. Short term issues to fix are the alignment of various components as it is a bit off, as well as the layout for multiple sections within a problem. We want to number the multiple problems and align them properly in the Problem section, and label them and break them up with a horizontal line in the Grading section. On the home page, we want to align the explanations better with the given button, to make it more clear. For the table of macros, after getting feedback from staff, we will move those to the right hand side under the grading information, in order to conserve space and allow graders to see those at the same time as providing feedback, rather than scrolling down. Some other things we will also think about and implement soon is a color palette and typography for the overall page, as well as pages for error handeling (right now it unfortunately core dumps!). Stay tuned for more design changes and implementation coming soon!
+					</div>
+				</div>	
+				<div class="row pb-30">
+					<div class="col-lg-12">
+						<h4 class="mb-20">  </h4>
+					</div>
+				</div>	
+				<div class="row pb-30">
+					<div class="col-lg-12">
+						<h4 class="mb-20">  </h4>
+						
+					</div>
+				</div>	
+			</div>	
+		</section>
+
+		<!--Scripts -->
+		<script src="https://unpkg.com/jam-icons@2.0.0/js/jam.min.js"></script>
+		<script src="js/vendor/jquery-2.2.4.min.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>	
+		<script src="js/easing.min.js"></script>	
+		<script src="js/superfish.min.js"></script>	
+		<script src="js/jquery.magnific-popup.min.js"></script>	
+		<script src="js/owl.carousel.min.js"></script>			
+		<script src="js/main.js"></script>	
+	</body>
+</html>
