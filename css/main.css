@@ -283,6 +283,12 @@ td, th {
   margin-top: 150px;
 }
 
+.mauto {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .ml-0 {
   margin-left: 0 !important;
 }
@@ -310,6 +316,10 @@ td, th {
 .ml-50 {
   margin-left: 50px;
 }
+
+.ml-200 {
+  margin-left: 200px;
+} 
 
 .ml-300 {
   margin-left: 300px;
@@ -1458,8 +1468,6 @@ h6 {
 .hh-pages {
   width: 800px;
   height: 425px;
-  margin-left: 180px;
-  margin-bottom:5px;
 }
 
 .grading-pages {
@@ -1470,15 +1478,33 @@ h6 {
 .grading-pages2 {
   width: 718px;
   height: 250px;
-  margin-bottom:10px;
-  margin-left: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grading-pages3 {
-  width: 718px;
-  height: 345px;
-  margin-bottom:10px;
-  margin-left: 200px;
+  width: 720px;
+  height: 375px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grading-pages4 {
+  width: 800px;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grading-pages5 {
+  width: 800px;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .whole-wrap {
