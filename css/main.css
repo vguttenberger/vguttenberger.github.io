@@ -1387,6 +1387,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: 100%;
   transition: .5s ease;
   backface-visibility: hidden;
+  border-radius: 5px;
 }
 
 .custom-size {
@@ -1400,10 +1401,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: 0;
   transition: .5s ease;
   background-color: #000000;
+  border-radius: 5px;
 }
 
 .single-portfolio:hover .overlay {
   opacity: 0.95;
+  -webkit-transform: scale(1.02);
 }
 
 .portfolio-text {
