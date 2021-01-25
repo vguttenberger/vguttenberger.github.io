@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Vera's Portfolio</title>
+
+    <style>
+
+        @font-face {
+            font-family: 'OmegaSans'; /*a name to be used later*/
+            src: url('fonts/OmegaSansRegular.ttf')
+                format('truetype'); /*URL to font*/
+
+        }
+        @font-face {
+            font-family: 'LeagueSpartan'; /*a name to be used later*/
+            src: url('fonts/LeagueSpartanVariable.ttf')
+                format('truetype'); /*URL to font*/
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            background-color:#fcf7ff ;
+            cursor: url('images/cursor_dark.png'), auto;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+        width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+        background: #1d1d1f; 
+        }
+        
+        ::-webkit-scrollbar-thumb {
+        background: #1d1d1f; 
+        }
+
+
+        .cursor {
+            height: 30px;
+            width: 30px;
+            border: none;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .expandCursor {
+            animation: expandAnim .3s forwards;
+        }
+
+
+        .header {
+            height:64px;
+            padding:10px;
+            background: #fcf7ff;
+            display: flex;
+            font-family: 'LeagueSpartan', sans-serif; 
+            color: #1d1d1f;
+            font-variation-settings: 'wght' 300, 'wdth' 100;
+            letter-spacing: 1px;
+
+        }
+
+        .logo {
+            height:60px;
+            vertical-align: middle;
+            padding-left:15px;
+
+        }
+        .name {
+            font-family: 'LeagueSpartan', sans-serif; 
+            height:62px;
+            font-size: 26px;
+            text-align: left; 
+            margin: 0px;            
+            padding-left: 20px;
+            color: #1d1d1f;
+        }
+
+        ul.nav {
+            width: 100%;
+            list-style-type: none;
+            margin: 0px;
+            vertical-align: middle;
+            padding:15px;
+        }
+
+        li.link {
+            float: right;
+            font-size: 26px;
+            margin-left: 40px;
+	        transition: font-variation-settings .25s, color .25s;
+        }
+
+        li a {
+            color:#1d1d1f;
+            text-decoration: none;
+        }
+
+        li:hover {
+            font-variation-settings: 'wght' 700, 'wdth' 120;
+        }
+
+
+        .arrow:hover {
+            border-bottom-width: 5px;
+            border-right-width: 5px;
+        }
+
+        .heading {
+            font-family: 'LeagueSpartan', sans-serif; 
+            color: #1d1d1f;
+            font-variation-settings: 'wght' 300, 'wdth' 100;
+            letter-spacing: 1px;
+            font-size: 60px;
+            height: 100px;
+            text-align: left;
+            padding-left: 25px;
+            margin-top: 6.25vh;
+            min-width:544px; 
+            }
+
+        .content { 
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+        }    
+
+        .wrap {
+            display: flex;
+        }
+
+        .wrap.m {
+            display: flex;
+            margin-top:6.25vh;
+            margin-bottom:6.25vh;
+        }  
+    
+        .workPictureLeft {
+            margin-left: 6.25vw;
+            margin-right:6.25vw;
+            /* margin-top: 6.25vh; */
+            border-radius:12px;
+            object-fit: scale-down;
+            max-width:25vw;
+            max-height:40vh;
+            width: auto;
+            height: auto;
+        }  
+
+        .sidePicture {
+            margin-right: 6.25vw;
+            margin-left:6.25vw;
+            border-radius:12px;
+            object-fit: scale-down;
+            max-width:25vw;
+            max-height:30vh;
+            width: auto;
+            height: auto;
+        }
+
+        .projectDescription {
+            flex: 1;
+            margin-left: 6.25vw;
+            margin-right: 6.25vw;
+            font-family: 'OmegaSans', sans-serif;
+            font-size: 21px;
+            line-height: 1.5;
+            color: #A54BD2;
+            max-width: 50vw;
+        }
+
+        h2 {
+            color: #A54BD2;
+        }
+        
+        h3 {
+            color: #1d1d1f;
+        }
+
+        p {
+            font-family: 'OmegaSans', sans-serif;
+            color: #1d1d1f
+        }
+
+        li{
+            margin-bottom: 1vh;
+        }
+
+        ul.basic {
+        color: #1d1d1f;
+        list-style-type: circle;
+        max-width: 37.5vw;
+        }
+
+         /* no change in link */
+        a:link {
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        a:visited {
+        text-decoration: none;
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        a:hover {
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        a:active {
+        text-decoration: none;
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcf7ff;
+            height: 120px;
+            animation-fill-mode: forwards;
+            margin-top: 6.25vh;
+        }
+
+        .arrow {
+            box-sizing: border-box;
+            height: 3vw;
+            width: 3vw;
+            border-style: solid;
+            border-color: #1d1d1f;
+            border-width: 0px 2px 2px 0px;
+            transform: rotate(45deg);
+            transition: border-width 300ms ease-in-out;
+            margin-bottom: 60px;
+        
+        }
+
+        .arrow:hover {
+            border-bottom-width: 5px;
+            border-right-width: 5px;
+            cursor: url('images/cursor_dark.png'), auto;
+        }
+        /* Animations */
+        /* Animting fade in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 0;
+            }
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        /* Animating cursor expand */
+        @keyframes expandAnim {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <section class="section" id="work">
+        <div class ="header">
+            <a href="index.html">
+                <img class = "logo link" src="images/VG_grey_3.png">
+            </a>
+                <p class = "name link"> Vera<br>Guttenberger</p>
+            <ul class = "nav"> 
+                <li class = "link"> <a href="index.html#about">About</a></li>
+                <li class = "link"> <a href="index.html#work">Work </a></li>
+
+        </div>  
+        <div data-aos="fade-right" data-aos-duration="1200">
+            <div class="heading"  >
+                Deloitte Project Work
+             </div> 
+             <p style="padding-left: 25px; margin-top: -8px"><i>Please note: due to confidentiality reasons, I cannot share specific details about or artifacts from my professional projects.</br>
+             To find out more about my work at Deloitte please contact me at <a href="mailto:vera.guttenberger@gmail.com">vera.guttenberger@gmail.com</a>.</i> </p>
+            
+        </div>
+            <div class="content">
+                <div class="wrap m"> 
+                    <img class="workPictureLeft" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/pharma_main.svg" alt="work_picture1">
+                    <div class ="projectDescription" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h2>Pharmaceutical Case Processing</h2>
+                        <p>
+                            Our team worked with a multinational pharmaceutical company to build a product optimizing pharmacovigilance case processing. 
+                            This has been handled in the past through a static process, and our team built a new software in which case processing on adverse events is a shared effort between humans and machines. 
+                            The UX team designed the experience, which included handling exceptions by adjudicating machine decisions.
+                            A primary focus of the effort was directing human interactions to grow training data, without making the interface requirements complex.</p>
+                    </div>
+                </div>
+                    <div class="wrap m"> 
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> ROLE </h3>
+                        <p>
+                            As one of two UX designers on the team, I worked with the business owners, developers, and data scientists to design and implement the solution. 
+                            I began with collecting information in order to create current and future state blueprints, information architecture, user flows, and user interaction behavior patterns. I continued by creating and iterating on low-fidelity wireframes capturing various portions of the application, and started building out an extensive design system.
+                            From there, using the wireframes and growing design system, I build a high-fidelity clickable prototype and communicated the assets with developers through detailed developer stories/task and weekly development progress check-ins.
+                        </p>
+                    </div>
+                    <img class="sidePicture" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/pharma_second.svg" >
+                </div> 
+                <div class="wrap m"> 
+                    <div class ="projectDescription" style="max-width:none" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> PROCESS</h3>
+                        <div style="width:100%; display: table">
+                            <div style="display: table-row">
+                                <div style="display: table-cell">
+                                    <h4> Discover and Define</h4>
+                                    <ul class="basic" style="margin-right:12.5vw;">
+                                        <li>Collaborated with business owners to understand <b>personas</b>, and their <b>pain points and needs</b></li>
+                                        <li>Created current and future state <b>blueprints</b></li>
+                                        <li>Built <b>user flows</b></li>
+                                        <li>Developed <b>information architecture</b></li>
+                                        <li>Conducted multiple <b>UX working sessions</b> to iterate on and solidify requirements</li>
+                                    </ul>
+                                </div>
+                                    <h4> Design and Develop</h4>
+                                    <ul class="basic">
+                                        <li>Created <b>low fidelity mockups</b> </li>
+                                        <li>Built a <b>design system</b> </li>
+                                        <li>Created <b>high fidelity mockups and clickable prototypes</b></li>
+                                        <li>Took on a product management role <b>writing stories and tasks</b> for the development team and worked with them on <b>implementation</b></li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+                <div class="wrap m"> 
+                    <img class="workPictureLeft" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/supplychain_main.svg" alt="work_picture1">
+                    <div class ="projectDescription" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h2>Supply Chain Management</h2>
+                        <p>
+                            Our team built an enterprise capability which allows organizations to proactively identify and resolve issues from day-to-day business transactions. 
+                            The tool is an insights and decision support platform that monitors transactional data from internal and external sources and automatically separates issues from the mass.
+                             It is meant to help organizations with a lack of visibility in the supply chain, high amounts of processing errors, mismatch between customer sentiment and internal metrics, lack of end-to-end orchestration, and more. </p>
+                    </div>
+                </div>
+                    <div class="wrap m"> 
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> ROLE </h3>
+                        <p>
+                            On this project I held a cross-functional role helping design as well as develop a proof of concept for the platform. 
+                            I focused on building out the front-end of the React-based platform and worked with the business team and back-end developers to ingest, organize, and display the appropriate data in the most effective and efficient way. 
+                            I also worked on designing new features and interaction behaviors. Additionally, I helped the team workflow stay organized by transitioning issue tracking and project management to JIRA. 
+                        </p>
+                    </div>
+                    <img class="sidePicture" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/supplychain_second.svg" >
+                </div> 
+                <div class="wrap m"> 
+                    <div class ="projectDescription" style="max-width:none" style="max-width:none" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> PROCESS</h3>
+                        <div style="width:100%; display: table">
+                            <div style="display: table-row">
+                                <div style="display: table-cell">
+                                    <h4> Design</h4>
+                                    <ul class="basic" style="margin-right:12.5vw;">
+                                        <li>Iterated on designs of <b>new pages and features</b></li>
+                                        <li>Developed <b>high fidelity prototypes</b></li>
+                                        <li>Extended the <b>design system</b> </li>
+                                        <li>Worked with business team on determining appropriate <b>display of data</b> </li>
+                                    </ul>
+                                 </div>   
+                                    <h4> Develop</h4>
+                                    <ul class="basic">
+                                        <li>Built out the <b>front-end</b> of the platform (using React and the Material-UI framework)</li>
+                                        <li>Continued development of new front-end <b>features and interaction behaviors</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                </div> 
+                <div class="wrap m"> 
+                    <img class="workPictureLeft" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/chatbot_main.svg" alt="work_picture1">
+                    <div class ="projectDescription" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h2>Chatbot Personality and Avatar Design</h2>
+                        <p>
+                            Our team worked with the HR team of a global food corporation to redesign their HR Chatbot user experience. 
+                            This included designing the chatbot avatar, creating a personality framework for the AI, redesigning the chatbot information page, and documenting a gap analysis along with best practices and a potential future roadmap.  </p>
+                    </div>
+                </div>
+                <div class="wrap m"> 
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> ROLE </h3>
+                        <p>
+                            I worked with the client HR team to evaluate their current state of conversational capabilities and ran a workshop to inform the design of the deliverables. 
+                            I worked with a visual designer to iterate on the avatar design and personality framework, and conducted daily design review meetings with the client. 
+                            I also worked on redesigning the information page, creating mockups and page illustrations and handing them off to the client development team.
+                        </p>
+                    </div>
+                    <img class="sidePicture" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/chatbot_second.svg" >
+                </div> 
+                <div class="wrap m"> 
+                    <div class ="projectDescription" style="max-width:none" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> PROCESS</h3>
+                        <div style="width:100%; display: table">
+                            <div style="display: table-row">
+                                <div style="display: table-cell">
+                                    <h4> Discover and Define</h4>
+                                    <ul class="basic" style="margin-right:12.5vw;">
+                                        <li>Evaluated the client's <b>current chatbot capability</b></li>
+                                        <li>Conducted <b>stakeholder interviews</b> with current and potential future users of the chatbot across 4 continents</li>
+                                        <li>Facilitated a full-day <b>virtual workshop</b> with the client HR team</li>
+                                    </ul>
+                                </div>
+                                <div style="max-width:40vw; display: table-cell"></div>
+                                    <h4> Design and Develop</h4>
+                                    <ul class="basic">
+                                        <li>Helped design the <b>avatar</b> (initial paper and digital sketches, final design in Adobe Illustrator)</li>
+                                        <li>Created the information page <b> style guide, mockups (with full specifications), and illustrations</b></li>
+                                        <li>Put together documentation of the <b>personality framework</b>, <b>conversational AI best practices</b>, <b> and gap analysis</b></li>
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="wrap m"> 
+                    <img class="workPictureLeft" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/biotech_main.svg" alt="work_picture1">
+                    <div class ="projectDescription" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h2>Biotech Marketing Dashboard</h2>
+                        <p>
+                            Through this initiative, our team worked with a multinational biotechnology company to design and build an analytics dashboard for monitoring and reporting metrics on their marketing material review process. 
+                            The process involves review of all forms of advertising and promotion for medical accuracy, completeness, realism, compliance etc. 
+                            The objective of the dashboard solution is to track metrics around all stages of the process, perform root cause analysis, and enable continuous improvement.  </p>
+                    </div>
+                </div>
+                <div class="wrap m"> 
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> ROLE </h3>
+                        <p>
+                            As the sole designer on this project, my role began with daily meetings with the client marketing team to align on a prioritized set of metrics and definitions, dimensions, and calculations. 
+                            I created a metric log, data map, and information architecture. From there, I built a prototype, along with detailed documentation of all user interaction patterns and metric calculations. 
+                        </p>
+                    </div>
+                    <img class="sidePicture" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600" src="images/deloitte/biotech_second.svg" >
+                </div> 
+                <div class="wrap m"> 
+                    <div class ="projectDescription" style="max-width:none" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> PROCESS</h3>
+                        <div style="width:100%; display: table">
+                            <div style="display: table-row">
+                                <div style="display: table-cell">
+                                    <h4> Discover and Define</h4>
+                                    <ul class="basic" style="margin-right:12.5vw;">
+                                        <li>Conducted daily meetings with the client team to align on <b>stakeholder needs and prioritized metrics</b>
+                                        <li>Researched the internal tracking system to gain <b>understanding of the process and user needs</b></li>
+                                        <li>Documented a <b>metric log</b></li>
+                                        <li>Created an <b>information architecture</b></li>
+                                    </ul>
+                                </div>
+                                    <h4> Design and Develop</h4>
+                                    <ul class="basic">
+                                        <li>Built dashboard <b>wireframes and prototype</b></li>
+                                        <li>Worked with a data scientist to build a <b>data map</b></li>
+                                        <li>Put together a detailed <b>design document</b></li>
+                                        <li>Facilitated <b>design reviews</b> with the client team</li>
+                                        <li>Conducted <b>deliverable handoff</b> meetings with the development team</li>
+                                    </ul>
+                            </div>
+                        </div>            
+                    </div>
+                </div> 
+            </div> 
+            
+            <div class="footer">
+                <a class="arrow link" id="arrow" href="#"
+                style="transform: rotate(225deg);"></a>
+            </div>
+        
+    </section>
+    <div class = "cursor"> </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+
+        //init animation library
+        AOS.init();
+        // cursor animation script
+        const cursor = document.querySelector('.cursor')
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: "+(e.clientY - 15)+"px; left: "+(e.clientX - 15)+"px; border: 2px solid #1d1d1f; position: fixed")
+        })
+        document.addEventListener('mouseleave', e => {
+            cursor.setAttribute("style", "border: none;")
+        })
+
+       // cursor expand on any click:
+        document.addEventListener('click', () => {
+            cursor.classList.add("expandCursor");
+
+            setTimeout(() => {
+                cursor.classList.remove("expandCursor");
+            }, 500)
+        })
+
+        
+       
+    </script>
+</body>
+
+</html>
