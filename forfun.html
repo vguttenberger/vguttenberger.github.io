@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Vera's Portfolio</title>
+
+    <style>
+
+        @font-face {
+            font-family: 'OmegaSans'; /*a name to be used later*/
+            src: url('fonts/OmegaSansRegular.ttf')
+                format('truetype'); /*URL to font*/
+
+        }
+        @font-face {
+            font-family: 'LeagueSpartan'; /*a name to be used later*/
+            src: url('fonts/LeagueSpartanVariable.ttf')
+                format('truetype'); /*URL to font*/
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            background-color:#fcf7ff;
+            cursor: url('images/cursor_dark.png'), auto;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+        width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+        background: #1d1d1f; 
+        }
+        
+        ::-webkit-scrollbar-thumb {
+        background: #1d1d1f; 
+        }
+
+
+        .cursor {
+            height: 30px;
+            width: 30px;
+            border: none;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .expandCursor {
+            animation: expandAnim .3s forwards;
+        }
+
+
+        .header {
+            height:64px;
+            padding:10px;
+            background: #fcf7ff;
+            display: flex;
+            font-family: 'LeagueSpartan', sans-serif; 
+            color: #1d1d1f;
+            font-variation-settings: 'wght' 300, 'wdth' 100;
+            letter-spacing: 1px;
+
+        }
+
+        .logo {
+            height:60px;
+            vertical-align: middle;
+            padding-left:15px;
+
+        }
+        .name {
+            font-family: 'LeagueSpartan', sans-serif; 
+            height:62px;
+            font-size: 26px;
+            text-align: left; 
+            margin: 0px;            
+            padding-left: 20px;
+            color: #1d1d1f;
+        }
+
+        ul.nav {
+            width: 100%;
+            list-style-type: none;
+            margin: 0px;
+            vertical-align: middle;
+            padding:15px;
+        }
+
+        li.link {
+            float: right;
+            font-size: 26px;
+            margin-left: 40px;
+	        transition: font-variation-settings .25s, color .25s;
+        }
+
+        li a {
+            color:#1d1d1f;
+            text-decoration: none;
+        }
+
+        li:hover {
+            font-variation-settings: 'wght' 700, 'wdth' 120;
+        }
+
+
+        .arrow:hover {
+            border-bottom-width: 5px;
+            border-right-width: 5px;
+        }
+
+        .heading {
+            font-family: 'LeagueSpartan', sans-serif; 
+            color: #1d1d1f;
+            font-variation-settings: 'wght' 300, 'wdth' 100;
+            letter-spacing: 1px;
+            font-size: 60px;
+            height: 100px;
+            text-align: left;
+            padding-left: 25px;
+            margin-top: 6.25vh;
+            }
+
+        .content { 
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+        }    
+
+        .wrap {
+            display: flex;
+        }
+
+        .wrap.mt {
+            display: flex;
+            margin-top:6.25vh;
+        }  
+    
+        .mainPicture{
+            width: 50vw;
+            margin-left: 6.25vw;
+            margin-right: 6.25vw;
+            margin-top: 6.25vh;
+            margin-bottom: 6.25vh;
+            background-color:#A54BD2;
+            border-radius:12px;
+        }
+
+        .pictureOne{
+            max-width: 44vw;
+            margin-top: 6.25vh;
+            margin-bottom: 6.25vh;
+            background-color:#A54BD2;
+            border-radius:12px;
+        } 
+        .pictureTwo{
+            max-width: 87.5vw;
+            margin-top: 6.25vh;
+            margin-bottom: 6.25vh;
+            margin-left: 6.25vw;
+            margin-left:6.25vw;
+            background-color:#A54BD2;
+            border-radius:12px;
+        } 
+
+        .sidePicture {
+            margin-top: 6.25vh;
+            margin-bottom: 6.25vh;
+            margin-right: 6.25vw;
+            margin-left:6.25vw;
+            border-radius:12px;
+            object-fit: scale-down;
+            max-width:37.5vw;
+            width: auto;
+            height: auto;
+        }
+
+        .projectDescription {
+            flex: 1;
+            margin-left: 6.25vw;
+            margin-top: 6.25vh;
+            padding-bottom: 6.25vh;
+            font-family: 'OmegaSans', sans-serif;
+            font-size: 21px;
+            line-height: 1.5;
+            color: #A54BD2;
+            max-width: 87.5vw;
+        }
+
+        h2 {
+            color: #A54BD2;
+        }
+        
+        h3 {
+            color: #1d1d1f;
+        }
+
+        p {
+            font-family: 'OmegaSans', sans-serif;
+            color: #1d1d1f;
+        }
+
+        li{
+            margin-bottom: 1vh;
+        }
+
+        ul.basic {
+        color: #1d1d1f;
+        list-style-type: circle;
+        max-width: 24vw;
+        }
+
+        .learnMore{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        align-self: center;
+        }
+
+        /* description arrow animation */
+        .descriptionArrow {
+            position: relative;
+            display: inline-block;
+            padding: 8px 0px 8px 16px;      
+        }
+
+        .descriptionArrow:before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: #1d1d1f;
+            top: 50%;
+            transition: width 0.5s ease-out;
+        }
+        .descriptionArrow:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #1d1d1f;
+            border-right: 1px solid #1d1d1f;
+            transform: rotate(45deg);
+            top: calc(50% - 5px);
+            position: absolute;
+            right: 1px;
+        }
+        .descriptionArrow:hover:before {
+            width: 80px;
+            cursor: url('images/cursor_dark.png'), auto;
+        }
+         /* no change in link */
+        a:link {
+        text-decoration: none;
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        a:visited {
+        text-decoration: none;
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        a:hover {
+        text-decoration: none;
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        a:active {
+        text-decoration: none;
+        color: #1d1d1f;
+        cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcf7ff;
+            height: 120px;
+            animation-fill-mode: forwards;
+            margin-top: 6.25vh;
+        }
+
+        .arrow {
+            box-sizing: border-box;
+            height: 3vw;
+            width: 3vw;
+            border-style: solid;
+            border-color: #1d1d1f;
+            border-width: 0px 2px 2px 0px;
+            transform: rotate(45deg);
+            transition: border-width 300ms ease-in-out;
+            margin-bottom: 60px;
+        
+        }
+
+        .arrow:hover {
+            border-bottom-width: 5px;
+            border-right-width: 5px;
+            cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        .row {
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+        .column {
+        flex: 50%;
+        max-width: 46%;
+        }
+
+         .column.one {
+        flex: 50%;
+        max-width: 46.875%;
+        margin-right: 6.25%;
+        }
+
+        .column img {
+        margin-top: 5.2vw;
+        vertical-align:middle;
+        align-items: right;
+        width: 100%;
+        border-radius:12px;
+        }
+
+
+
+        /* Animations */
+        /* Animting fade in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            40% {
+                opacity: 0;
+            }
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        /* Animating cursor expand */
+        @keyframes expandAnim {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <section class="section" id="work">
+        <div class ="header">
+            <a href="index.html">
+                <img class = "logo link" src="images/VG_grey_3.png">
+            </a>
+                <p class = "name link"> Vera<br>Guttenberger</p>
+            <ul class = "nav"> 
+                <li class = "link"> <a href="index.html#about">About</a></li>
+                <li class = "link"> <a href="index.html#work">Work </a></li>
+
+        </div>  
+            <div class="heading" data-aos="fade-right" data-aos-duration="1200" >
+               Digital Doodles
+            </div> 
+            <div class="content">
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> Drawing with Procreate </h3>
+                        <p>
+                            These are just some doodles I've made while playing around with Procreate on my iPad :) 
+                        </p>
+                        <div class="row">
+                            <div class="column one" >
+                              <img src="images/forfun/pulp.JPG" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/astronaut.JPG" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/DrinkUp.JPG" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/hockney.PNG" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                              
+                            </div>
+                            <div class="column">
+                              <img src="images/forfun/Glowedup.PNG" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/Space_Eye.jpg" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/stevie.JPG" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/me.png" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                            </div>
+                        </div>
+                    </div>
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> 3D Modeling with Blender </h3>
+                        <p>
+                            I have recently started exploring 3D art and making some things using Blender - more to come as I keep exploring! 
+                        </p>
+                        <div class="row">
+                            <div class="column one" >
+                              <img src="images/forfun/donut1.jpg" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                              
+                            </div>
+                            <div class="column">
+                              <img src="images/forfun/cherries1.jpg" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">
+                            </div>
+                        </div>
+                    </div>
+                    <div class ="projectDescription" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                        <h3> Daniel Allan - Visuals </h3>
+                        <p>
+                            Daniel Allan is a music producer and songwriter friend of mine that I have done some visual art for. 
+                            Below is a one pager I designed, along with some social media icons I created (both using Adobe Illustrator), and a concert backdrop base animation I made (using AfterEffects). 
+                            I've also helped out setting the type for and editing some of his album covers (using Photoshop).
+                            It's been a good opportunity to start learning more Adobe tools - and I look forward to continuing growing my skills and toolset!  
+                        </p>
+                        <a target="_blank" and rel="noopener noreferrer" href=" https://open.spotify.com/artist/5JQ1XqKJ2Art01rF4tu1Ra?si=SyPmVF_ESWyJGYtHymkZCg">
+                            <div class="learnMore">
+                                <p><i>Check him out on Spotify! </i></p> 
+                                <span class="descriptionArrow"></span>
+                            </div>
+                        </a>
+                        <div class="row">
+                            <div class="column one" >
+                              <img src="images/forfun/onepager.svg" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                              <img src="images/forfun/LogoTransition.gif" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1600">
+                            </div>
+                            <div class="column">
+                                <img src="images/forfun/icons.png" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">              
+                                <img src="images/forfun/albums.png" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1600">                                              
+                            </div>
+                        </div>
+                    </div>
+            </div> 
+            <div class="footer">
+                <a class="arrow link" id="arrow" href="#"
+                style="transform: rotate(225deg);"></a>
+            </div>
+        
+    </section>
+    <div class = "cursor"> </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+
+        //init animation library
+        AOS.init();
+        // cursor animation script
+        const cursor = document.querySelector('.cursor')
+        document.addEventListener('mousemove', e => {
+            cursor.setAttribute("style", "top: "+(e.clientY - 15)+"px; left: "+(e.clientX - 15)+"px; border: 2px solid #1d1d1f; position: fixed")
+        })
+        document.addEventListener('mouseleave', e => {
+            cursor.setAttribute("style", "border: none;")
+        })
+
+       // cursor expand on any click:
+        document.addEventListener('click', () => {
+            cursor.classList.add("expandCursor");
+
+            setTimeout(() => {
+                cursor.classList.remove("expandCursor");
+            }, 500)
+        })
+
+        
+       
+    </script>
+</body>
+
+</html>
