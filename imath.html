@@ -35,7 +35,7 @@
             outline: 0;
             margin: 0;
             padding: 0;
-            background-color: #fcf7ff;
+            background-color: #FCFCFC;
             cursor: url('images/cursor_dark.png'), auto;
             scroll-behavior: smooth;
         }
@@ -70,7 +70,7 @@
         .header {
             height:64px;
             padding:10px;
-            background: #fcf7ff;
+            background: #FCFCFC;
             display: flex;
             font-family: 'LeagueSpartan', sans-serif; 
             color: #1d1d1f;
@@ -158,15 +158,16 @@
             margin-right: 6.25vw;
             margin-top: 6.25vh;
             margin-bottom: 6.25vh;
-            background-color:#A54BD2;
+            background-color:#B37BDB;
             border-radius:12px;
+            object-fit: scale-down;
         }
 
         .pictureOne{
             max-width: 44vw;
             margin-top: 6.25vh;
             margin-bottom: 6.25vh;
-            background-color:#A54BD2;
+            background-color:#B37BDB;
             border-radius:12px;
         } 
         .pictureTwo{
@@ -175,7 +176,7 @@
             margin-bottom: 6.25vh;
             margin-left: 6.25vw;
             margin-left:6.25vw;
-            background-color:#A54BD2;
+            background-color:#B37BDB;
             border-radius:12px;
         } 
 
@@ -186,9 +187,7 @@
             margin-left:6.25vw;
             border-radius:12px;
             object-fit: scale-down;
-            max-width:37.5vw;
-            width: auto;
-            height: auto;
+            width:37.5vw;
         }
 
         .projectDescription {
@@ -200,12 +199,12 @@
             font-family: 'OmegaSans', sans-serif;
             font-size: 21px;
             line-height: 1.5;
-            color: #A54BD2;
+            color: #B37BDB;
             max-width: 37.5vw;
         }
 
         h2 {
-            color: #A54BD2;
+            color: #B37BDB;
         }
         
         h3 {
@@ -295,7 +294,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #fcf7ff;
+            background-color: #FCFCFC;
             height: 120px;
             animation-fill-mode: forwards;
             margin-top: 6.25vh;
@@ -317,6 +316,51 @@
         .arrow:hover {
             border-bottom-width: 5px;
             border-right-width: 5px;
+            cursor: url('images/cursor_dark.png'), auto;
+        }
+
+        .back{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 6.25vh;
+            padding-left: 25px;
+        }
+
+        /* description arrow animation */
+        .descriptionArrow {
+            position: relative;
+            display: inline-block;
+            padding: 8px 0px 8px 16px;      
+        }
+
+        .descriptionArrow.back {
+            transform: rotate(180deg);   
+        }
+
+        .descriptionArrow:before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: #1d1d1f;
+            top: 50%;
+            transition: width 0.5s ease-out;
+        }
+        .descriptionArrow:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #1d1d1f;
+            border-right: 1px solid #1d1d1f;
+            transform: rotate(45deg);
+            top: calc(50% - 5px);
+            position: absolute;
+            right: 1px;
+        }
+        .descriptionArrow:hover:before {
+            width: 80px;
             cursor: url('images/cursor_dark.png'), auto;
         }
 
@@ -367,6 +411,11 @@
                 <li class = "link"> <a href="index.html#work">Work </a></li>
 
         </div>  
+        <a href="index.html#work">
+            <div class="back" data-aos="fade-right" data-aos-duration="1200">
+                <span class="descriptionArrow back"></span>
+            </div>
+        </a>
             <div class="heading" data-aos="fade-right" data-aos-duration="1200" >
                iMath
             </div> 
